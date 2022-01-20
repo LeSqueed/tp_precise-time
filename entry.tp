@@ -7,7 +7,7 @@
     "colorDark" : "#FF0000",
     "colorLight" : "#00FF00"
   },
-  "plugin_start_cmd" : "python %TP_PLUGIN_FOLDER%advanced_time\\main.exe",
+  "plugin_start_cmd" : "%TP_PLUGIN_FOLDER%advanced_time\\main.exe",
   "categories": [
     {
       "id": "pr_date",
