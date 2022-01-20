@@ -6,6 +6,7 @@ import TouchPortalAPI as TP
 
 TPClient = TP.Client("cy_advanced_time")
 
+
 # Pad input to a minimum of 2 characters.
 def pad_number(num):
     return str(num).zfill(2)
@@ -19,12 +20,13 @@ def update_time():
     threading.Timer(1.0, update_time).start() # Call self every second to loop
 
     # Update all the states.
-    TPClient.stateUpdate("Second", str(pad_number(date.second)))
-    TPClient.stateUpdate("Minute", str(pad_number(date.minute)))
-    TPClient.stateUpdate("Hour", str(pad_number(date.hour)))
-    TPClient.stateUpdate("Day", str(pad_number(date.day)))
-    TPClient.stateUpdate("Month", str(pad_number(date.month)))
-    TPClient.stateUpdate("Year", str(date.year))
+    TPClient.stateUpdate("pr_second", str(pad_number(date.second)))
+    TPClient.stateUpdate("pr_minute", str(pad_number(date.minute)))
+    TPClient.stateUpdate("pr_hour", str(pad_number(date.hour)))
+    TPClient.stateUpdate("pr_day", str(pad_number(date.day)))
+    TPClient.stateUpdate("pr_month", str(pad_number(date.month)))
+    TPClient.stateUpdate("pr_year", str(date.year))
+
 
 # Event when client connects
 @TPClient.on(TP.TYPES.onConnect)

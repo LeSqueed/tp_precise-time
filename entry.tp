@@ -1,54 +1,63 @@
 {
   "sdk" : 3,
-  "version" : 0.01,
+  "version" : 0.10,
   "name": "Advanced Time",
   "id" : "cy_advanced_time",
   "configuration" : {
     "colorDark" : "#FF0000",
     "colorLight" : "#00FF00"
   },
-  "plugin_start_cmd" : "%TP_PLUGIN_FOLDER%advanced_time\\main.exe",
-  "categories": [],
-      "events" : [],
-      "connectors" : [],
+  "plugin_start_cmd" : "python %TP_PLUGIN_FOLDER%advanced_time\\main.exe",
+  "categories": [
+    {
+      "id": "pr_date",
+      "name": "Date",
+      "actions": [],
       "states" : [
           {
-            "id" : "Day",
+            "id" : "pr_day",
             "type" : "text",
             "desc" : "Numeric day (05)",
-            "default" : "00"
+            "default" : "01"
           },
           {
-            "id" : "Month",
+            "id" : "pr_month",
             "type" : "text",
             "desc" : "Numeric month (01)",
-            "default" : "00"
+            "default" : "01"
           },
           {
-            "id" : "Year",
+            "id" : "pr_year",
             "type" : "text",
             "desc" : "Numeric year (2022)",
-            "default" : "0000"
-          },
-          {
-            "id" : "Second",
-            "type" : "text",
-            "desc" : "Seconds (12)",
-            "default" : "00"
-          },
-          {
-            "id" : "Minute",
-            "type" : "text",
-            "desc" : "Minutes (58)",
-            "default" : "00"
-          },
-          {
-            "id" : "Hour",
-            "type" : "text",
-            "desc" : "Hour(23)",
-            "default" : "00"
+            "default" : "0001"
           },
       ],
-  }],
-  "settings": [],
+    },
+    {
+      "id": "pr_time",
+      "name": "Time",
+      "actions": [],
+      "states" : [
+          {
+            "id" : "pr_second",
+            "type" : "text",
+            "desc" : "Seconds (12)",
+            "default" : "01"
+          },
+          {
+            "id" : "pr_minute",
+            "type" : "text",
+            "desc" : "Minutes (58)",
+            "default" : "01"
+          },
+          {
+            "id" : "pr_hour",
+            "type" : "text",
+            "desc" : "Hour(23)",
+            "default" : "01"
+          },
+      ],
+    }
+  ]
 }
