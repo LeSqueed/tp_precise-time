@@ -1,0 +1,54 @@
+{
+  "sdk" : 3,
+  "version" : 0.01,
+  "name": "Advanced Time",
+  "id" : "cy_advanced_time",
+  "configuration" : {
+    "colorDark" : "#FF0000",
+    "colorLight" : "#00FF00"
+  },
+  "plugin_start_cmd" : "%TP_PLUGIN_FOLDER%advanced_time\\main.exe",
+  "categories": [],
+      "events" : [],
+      "connectors" : [],
+      "states" : [
+          {
+            "id" : "Day",
+            "type" : "text",
+            "desc" : "Numeric day (05)",
+            "default" : "00"
+          },
+          {
+            "id" : "Month",
+            "type" : "text",
+            "desc" : "Numeric month (01)",
+            "default" : "00"
+          },
+          {
+            "id" : "Year",
+            "type" : "text",
+            "desc" : "Numeric year (2022)",
+            "default" : "0000"
+          },
+          {
+            "id" : "Second",
+            "type" : "text",
+            "desc" : "Seconds (12)",
+            "default" : "00"
+          },
+          {
+            "id" : "Minute",
+            "type" : "text",
+            "desc" : "Minutes (58)",
+            "default" : "00"
+          },
+          {
+            "id" : "Hour",
+            "type" : "text",
+            "desc" : "Hour(23)",
+            "default" : "00"
+          },
+      ],
+  }],
+  "settings": [],
+}
