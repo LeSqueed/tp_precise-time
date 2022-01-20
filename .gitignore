@@ -1,5 +1,6 @@
-# Jetbrains and
+# Jetbrains and exe output folder
 .idea
+output
 
 # Executables
 *.exe

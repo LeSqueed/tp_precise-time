@@ -1,5 +1,5 @@
 import datetime
-import sys
+import os
 import threading
 
 import TouchPortalAPI as TP
@@ -12,6 +12,7 @@ def pad_number(num):
 
 
 def update_time():
+
     # Create a date object holding the values we need for our update later.
     date = datetime.datetime.strptime(str(datetime.datetime.now()), "%Y-%m-%d %H:%M:%S.%f")
 
@@ -38,7 +39,7 @@ def onStart(data):
 def onShutdown(data):
     print("Shutting down at request of TP.")
     TPClient.disconnect()
-    sys.exit()
+    os._exit(0)
 
 
 def main():
@@ -47,5 +48,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
