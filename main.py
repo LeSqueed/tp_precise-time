@@ -17,15 +17,36 @@ def update_time():
     # Create a date object holding the values we need for our update later.
     date = datetime.datetime.strptime(str(datetime.datetime.now()), "%Y-%m-%d %H:%M:%S.%f")
 
-    threading.Timer(1.0, update_time).start() # Call self every second to loop
+    threading.Timer(1.0, update_time).start()  # Call self every second to loop
 
     # Update all the states.
-    TPClient.stateUpdate("pr_second", str(pad_number(date.second)))
-    TPClient.stateUpdate("pr_minute", str(pad_number(date.minute)))
-    TPClient.stateUpdate("pr_hour", str(pad_number(date.hour)))
-    TPClient.stateUpdate("pr_day", str(pad_number(date.day)))
-    TPClient.stateUpdate("pr_month", str(pad_number(date.month)))
-    TPClient.stateUpdate("pr_year", str(date.year))
+    update_states = [
+        {
+            "id": "pr_second",
+            "value": str(pad_number(date.second))
+        },
+        {
+           "id": "pr_minute",
+           "value": str(pad_number(date.minute))
+        },
+        {
+           "id": "pr_hour",
+           "value": str(pad_number(date.hour))
+        },
+        {
+           "id": "pr_day",
+           "value": str(pad_number(date.day))
+        },
+        {
+           "id": "pr_month",
+           "value": str(pad_number(date.month))
+        },
+        {
+           "id": "pr_year",
+           "value": str(date.year)
+        },
+    ]
+    TPClient.stateUpdateMany(update_states)
 
 
 # Event when client connects
